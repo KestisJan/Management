@@ -22,3 +22,5 @@ Route::get('/', [HomeController::class, 'index']);
 // User Controller
 // Register route 
 Route::get('/register', [UserController::class, 'create']);
+// Store route
+Route::get('/users', [UserController::class, 'store']);
