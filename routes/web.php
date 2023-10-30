@@ -20,7 +20,9 @@ use App\Http\Controllers\UserController;
 Route::get('/', [HomeController::class, 'index']);
 
 // User Controller
+// Login route
+Route::get('/login', [UserController::class, 'login']);
 // Register route 
 Route::get('/register', [UserController::class, 'create']);
 // Store route
-Route::get('/users', [UserController::class, 'store']);
+Route::post('/users', [UserController::class, 'store']);

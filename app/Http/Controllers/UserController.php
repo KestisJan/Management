@@ -11,7 +11,7 @@ class UserController extends Controller
     // Show Registration form
     public function create()
     {
-        return view('user.create');
+        return view('users.create');
     }
 
     // Create New User
@@ -46,5 +46,9 @@ class UserController extends Controller
         $request->session()->regenerate();
 
         return redirect('/');
+    }
+
+    public function login() {
+        return view('users.login');
     }
 }

@@ -1,11 +1,11 @@
 <x-layout>
     <!-- Container -->
-    <div class="container mx-auto p-4 sm:w-1/2 md:w-1/3 lg:w-1/4">
+    <x-container>
         <!-- Header -->
         <header class="text-center">
             <h3 class="font-bold uppercase mb-1 text-2x1">Registration form</h3>
         </header>
-
+        <!-- FORM -->
         <form method="POST" action="/users">
             @csrf
             <!-- Name -->
@@ -38,5 +38,5 @@
                 <a href="/login" class="text-laravel">Login</a>
             </div>
         </form>
-    </div>
+    </x-container>
 </x-layout>
