@@ -22,8 +22,8 @@
       </script>
     <title>Task Management</title>
 </head>
-<body class="mb-48">
-    <nav class="flex justify-between items-center mb-2">
+<body class="mb-48" style="background-color: #FFDC9F ">
+    <nav class="flex justify-between items-center mb-2" style="background-color: #ED7458 ">
         <a href="/"><img class="w-16" src="{{asset('images/apple-touch-icon.png')}}" alt="" class="logo"/></a>
         <ul class="flex space-x-2 mr-3">
             <li>
@@ -44,7 +44,7 @@
         {{$slot}}
     </main>
 
-    <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold text-black h-24 mt-24 md:justify-center">
+    <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold text-black h-24 mt-24 md:justify-center" style="background-color:#ED7458 ">
         <p class="ml-2">Copyright &copy; 2023, All Rigths reserved</p>
     </footer>
 </body>
