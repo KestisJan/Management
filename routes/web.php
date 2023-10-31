@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -26,3 +27,7 @@ Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'create']);
 // Store route
 Route::post('/users', [UserController::class, 'store']);
+
+// Admin Controller
+// Admin index route
+Route::get('/admin', [AdminController::class, 'index']);
