@@ -1,7 +1,8 @@
 <x-layout>
     <x-container>
-        <form method="POST" action="/admin/update">
+        <form method="POST" action="/admin/{{ $user->id }}">
             @csrf
+            @method("PUT")
             
             <input type="hidden" name="user_id" value="{{ $user->id }}">
 

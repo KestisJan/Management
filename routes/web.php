@@ -33,3 +33,5 @@ Route::post('/users', [UserController::class, 'store']);
 Route::get('/admin', [AdminController::class, 'index']);
 // Admin edit route
 Route::get('/admin/{user}/edit', [AdminController::class, 'edit'])->name('admin.edit');
+// Admin update route
+Route::put('/admin/{user}', [AdminController::class, 'update']);

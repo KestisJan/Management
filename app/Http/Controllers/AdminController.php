@@ -21,4 +21,19 @@ class AdminController extends Controller
         ]);
     }
 
+    public function update(Request $request, User $user) {
+
+        // Validation
+
+        $formFields = $request->validate([
+            'name' => 'required',
+            'email' => ['required', 'email'],
+            'role' => ['required'],
+        ]);
+
+        $user->update($formFields);
+
+        return redirect('/admin');
+    }
+
 }
