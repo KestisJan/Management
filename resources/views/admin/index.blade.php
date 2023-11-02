@@ -16,7 +16,7 @@
                     <td class="px-6 py-4 whitespace-nowrap">{{ $user->email }}</td>
                     <td class="px-6 py-4 whitespace-nowrap">{{ $user->role }}</td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <a href="/admin/edit" class="text-blue-500 hover:underline">Edit</a>
+                        <a href="/admin/{{$user->id}}/edit" class="text-blue-500 hover:underline">Edit</a>
                         <a href="#" class="text-red-500 hover:underline">Delete</a>
                     </td>
                     
