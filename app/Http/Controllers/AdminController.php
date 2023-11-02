@@ -13,4 +13,10 @@ class AdminController extends Controller
             'users' => User::all()
         ]);
     }
+
+    public function edit()
+    {
+        return view('admin.edit');
+    }
+    
 }

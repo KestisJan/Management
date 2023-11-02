@@ -25,8 +25,10 @@
 <body class="mb-48" style="background-color: #FFDC9F ">
     <nav class="flex justify-between items-center mb-2" style="background-color: #ED7458 ">
         <a href="/"><img class="w-16" src="{{asset('images/apple-touch-icon.png')}}" alt="" class="logo"/></a>
-        <ul class="flex space-x-2 mr-3">
+        <ul class="flex space-x-3 mr-4">
             <li>
+                <a href="/admin" class="hover:test-laravel"><i class="fa-solid fa-user-tie"></i> Admin</a>
+            </li>
                 <span class="font-bold uppercase text-lg">
                     Welcome
                 </span>
