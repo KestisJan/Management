@@ -7,7 +7,7 @@
             </h2>
         </header>
         <!-- Form -->
-        <form method="POST" action="/login">
+        <form method="POST" action="/users/authenticate">
             @csrf
             <!-- Email -->
             <div class="mb-6">
@@ -23,5 +23,6 @@
             <div class="mb-6">
                 <button type="submit" class="text-black rounded py-2 px-4 hover:bg-black" style="background-color: #DDC9BC">Sign In</button>
             </div>
+        </form>
     </x-container>
 </x-layout>

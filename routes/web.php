@@ -21,7 +21,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', [HomeController::class, 'index']);
 
 // User Controller
-// Login route
+// Login form route
 Route::get('/login', [UserController::class, 'login']);
 // Register route 
 Route::get('/register', [UserController::class, 'create']);
