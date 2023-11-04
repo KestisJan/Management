@@ -28,7 +28,7 @@ class AdminController extends Controller
         $formFields = $request->validate([
             'name' => 'required',
             'email' => ['required', 'email'],
-            'role' => ['required'],
+            'role' => ['required', 'in:admin,user,editor'],
         ]);
 
         $user->update($formFields);

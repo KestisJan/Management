@@ -17,8 +17,12 @@
             </div>
 
             <div class="form-group">
-                <label for="Role:"></label>
-                <input type="text" name="role" value="{{ $user->role }}">
+                <label for="role">Role:</label>
+                <select name="role">
+                    <option value="admin {{ $user->role === 'admin' ? 'selected' : '' }}">Admin</option>
+                    <option value="user {{ $user->role === 'user' ? 'selected' : '' }}">User</option>
+                    <option value="editor {{ $user->role === 'editor' ? 'selected' : '' }}">Editor</option>
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Save Changes</button>
