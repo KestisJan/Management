@@ -26,21 +26,32 @@
     <nav class="flex justify-between items-center mb-2" style="background-color: #ED7458 ">
         <a href="/"><img class="w-16" src="{{asset('images/apple-touch-icon.png')}}" alt="" class="logo"/></a>
         <ul class="flex space-x-3 mr-4">
+            @auth
             <!-- Admin -->
             <li>
                 <a href="/admin" class="hover:test-laravel"><i class="fa-solid fa-user-tie"></i> Admin</a>
             </li>
             <li>
                 <span class="font-bold uppercase text-lg">
-                    Welcome
+                    Welcome {{auth()->user()->name}}
                 </span>
             </li>
+            <li>
+                <form class="inline" method="POST" action="/logout">
+                    @csrf
+                    <button type="submit">
+                        <i class="fa-solid fa-door-closed"></i> Logout
+                    </button>
+                </form>
+            </li>
+            @else
             <li>
                 <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
             <li>
             <li>
                 <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
             </li>
+            @endauth
         </ul>
     </nav>
 

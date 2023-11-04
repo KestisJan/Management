@@ -27,6 +27,10 @@ Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'create']);
 // Store route
 Route::post('/users', [UserController::class, 'store']);
+// Log IN route
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+// Log User OUT
+Route::post('/logout', [UserController::class, 'logout']);
 
 // Admin Controller
 // Admin index route

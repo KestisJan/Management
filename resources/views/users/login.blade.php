@@ -7,7 +7,7 @@
             </h2>
         </header>
         <!-- Form -->
-        <form method="POST" action="#">
+        <form method="POST" action="/login">
             @csrf
             <!-- Email -->
             <div class="mb-6">
