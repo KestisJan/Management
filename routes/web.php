@@ -39,3 +39,7 @@ Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/{user}/edit', [AdminController::class, 'edit'])->name('admin.edit');
 // Admin update route
 Route::put('/admin/{user}', [AdminController::class, 'update']);
+// Admin view users role route
+Route::get('/admin/roles/change/{user}', [AdminController::class, 'changeRoles'])->name('admin.roles.change');
+// Admin assign role route
+Route::put('admin/roles/update/{user}', [AdminController::class, 'updateRole'])->name('admin.roles.update');

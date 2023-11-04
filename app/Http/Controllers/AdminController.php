@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\UserRoles;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Traits\HasRoles;
 
 class AdminController extends Controller
 {
@@ -38,17 +39,33 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
-    public function assignRole($userId, $roleName)
+    public function changeRoles(User $user)
     {
-        $user = UserRoles::find($userId);
-        $role = Role::where('name', $roleName)->first();
+       
+        return view('admin.change-roles', [
+            'user' => $user,
+        ]);
+    }
 
-        if ($user && $role) {
-            $user->assignRole($role);
-            return redirect('/');
-        } else {
+    public function updateRole(Request $request, $userId)
+    {
+       $request->validate([
+        'new_role' => 'required|in:admin,user,editor',
+       ]);
+       
+       
+       $user = User::find($userId);
+       
+       if ($user) 
+       {
+            $newRole = $request->input('new_role');
+            $user->assignRole($newRole);
+            
+            return redirect('/admin');
+       } else 
+       {
             return abort(404);
-        }
+       }
     }
 
 }

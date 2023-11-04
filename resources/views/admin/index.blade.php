@@ -7,6 +7,7 @@
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Functions</th>
+                    <th class="px-8 py-5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Change Role</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,8 +17,11 @@
                     <td class="px-6 py-4 whitespace-nowrap">{{ $user->email }}</td>
                     <td class="px-6 py-4 whitespace-nowrap">{{ $user->role }}</td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <a href="/admin/{{$user->id}}/edit" class="text-blue-500 hover:underline">Edit</a>
+                        <a href="/admin/{{ $user->id }}/edit" class="text-blue-500 hover:underline">Edit</a>
                         <a href="#" class="text-red-500 hover:underline">Delete</a>
+                    </td>
+                    <td class="px-8 py-5 whitespace-nowrap">
+                        <a href="/admin/roles/change/{{ $user->id }}" class="text-blue-500 hover:underline">Change</a>
                     </td>
                     
                 </tr>
