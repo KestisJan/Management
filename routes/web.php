@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TruckerController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -42,4 +43,10 @@ Route::put('/admin/{user}', [AdminController::class, 'update']);
 // Admin view users role route
 Route::get('/admin/roles/change/{user}', [AdminController::class, 'changeRoles'])->name('admin.roles.change');
 // Admin assign role route
-Route::put('admin/roles/update/{user}', [AdminController::class, 'updateRole'])->name('admin.roles.update');
+Route::put('admin/roles/update/{user}', [AdminController::class, 'assignRole'])->name('admin.roles.update');
+
+// Trucker Controller
+// Trucker index route
+Route::get('/truckers', [TruckerController::class, 'index']);
+// Trucker create route
+Route::get('/truckers/create', [TruckerController::class, 'create']);

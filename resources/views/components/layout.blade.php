@@ -20,6 +20,7 @@
             },
           }
       </script>
+       @livewireStyles
     <title>Task Management</title>
 </head>
 <body class="mb-48" style="background-color: #FFDC9F ">
@@ -30,6 +31,13 @@
             <!-- Admin -->
             <li>
                 <a href="/admin" class="hover:test-laravel"><i class="fa-solid fa-user-tie"></i> Admin</a>
+            </li>
+            <!-- Truckers index route -->
+            <li>
+                <a href="/truckers" class="hover:test-laravel"><i class="fa-solid fa-truck"></i> Company Drivers</a>
+            </li>
+            <li>
+                <a href="/truckers/create" class="hover:test-laravel"><i class="fa-solid fa-person-chalkboard"></i> Create Driver</a>
             </li>
             <li>
                 <span class="font-bold uppercase text-lg">

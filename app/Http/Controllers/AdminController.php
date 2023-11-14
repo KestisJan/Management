@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\UserRoles;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Permission;
 
 class AdminController extends Controller
 {
@@ -44,28 +46,22 @@ class AdminController extends Controller
        
         return view('admin.change-roles', [
             'user' => $user,
+            'roles' => Role::all(),
         ]);
     }
 
-    public function updateRole(Request $request, $userId)
+    public function assignRole(Request $request, $userId)
     {
-       $request->validate([
-        'new_role' => 'required|in:admin,user,editor',
-       ]);
-       
-       
-       $user = User::find($userId);
-       
-       if ($user) 
-       {
+        $user = User::find($userId);
+        $assignRolesPermission = Permission::findByName('assign-roles');
+
+        if ($user->hasPermissionTo('assign-roles')) {
             $newRole = $request->input('new_role');
             $user->assignRole($newRole);
-            
             return redirect('/admin');
-       } else 
-       {
-            return abort(404);
-       }
+        } else {
+            return abort(403);
+        }
     }
 
 }
