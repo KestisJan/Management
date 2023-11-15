@@ -51,4 +51,4 @@ Route::get('/truckers', [TruckerController::class, 'index']);
 // Trucker create route
 Route::get('/truckers/create', [TruckerController::class, 'create']);
 // Trucker store route
-Route::post('/trucker/store', [TruckerController::class, 'store'])->name('trucker-store');
+Route::post('/trucker/store', [TruckerController::class, 'store']);

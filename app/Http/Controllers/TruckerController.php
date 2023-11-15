@@ -20,14 +20,15 @@ class TruckerController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:50',
-            'last_name' => 'required|string|max:50',
-            'phone_number' => 'required|string|max:15',
-            'truck_number' => 'required|string|max:50',
-            'trailer_number' => 'required|string|max:50',
-            'comment' => 'nullable|string',
+            'name' => ['required', 'min:3'],
+            'last_name' => ['required', 'min:3'],
+            'phone_number' => ['required', 'numeric', 'min:3'],
+            'truck_number' => ['required', 'min:3'],
+            'trailer_number' => ['required', 'min:3'],
+            'comment' => ['nullable', 'min:3'],
         ]);
         dd($validatedData);
+       
 
         Trucker::create($validatedData);
 
